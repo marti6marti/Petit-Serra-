@@ -1,10 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ca">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script defer src="app.js"></script>
+    <title>Exemple getElementById</title>
   </head>
-  <body></body>
+  <body>
+    <h1 id="title">Hola, món!</h1>
+    <button onclick="changeTitle()">Canvia el títol</button>
+
+    <script>
+      function changeTitle() {
+        const titleElement = document.getElementById("title");
+        titleElement.innerText = "Hola, JavaScript!";
+      }
+    </script>
+
+    <div class="message">Aquest és el missatge 1</div>
+    <div class="message">Aquest és el missatge 2</div>
+    <button onclick="highlightMessages()">Destaca Missatges</button>
+
+    <script>
+      function highlightMessages() {
+        const messages = document.getElementsByClassName("message");
+        for (let i = 0; i < messages.length; i++) {
+          messages[i].style.color = "red";
+        }
+      }
+    </script>
+
+    <p>Aquest és el paràgraf 1</p>
+    <p>Aquest és el paràgraf 2</p>
+    <button onclick="changeParagraphs()">Canvia Paràgrafs</button>
+
+    <script>
+      function changeParagraphs() {
+        const paragraphs = document.getElementsByTagName("p");
+        for (let i = 0; i < paragraphs.length; i++) {
+          paragraphs[i].style.fontStyle = "italic";
+        }
+      }
+    </script>
+
+    <div id="container">
+      <p class="text">Primer paràgraf</p>
+      <p class="text">Segon paràgraf</p>
+    </div>
+    <button onclick="highlightFirstParagraph()">Destaca Primer Paràgraf</button>
+
+    <script>
+      function highlightFirstParagraph() {
+        const firstParagraph = document.querySelector("#container .text");
+        firstParagraph.style.fontWeight = "bold";
+      }
+    </script>
+
+    <ul>
+      <li class="item">Element 1</li>
+      <li class="item">Element 2</li>
+      <li class="item">Element 3</li>
+    </ul>
+    <button onclick="underlineItems()">Subratlla Elements</button>
+
+    <script>
+      function underlineItems() {
+        const items = document.querySelectorAll(".item");
+        items.forEach((item) => (item.style.textDecoration = "underline"));
+      }
+    </script>
+
+    <button onclick="alert('Botó clicat!')">Fes clic aquí</button>
+    <button id="changeTextButton">Fes clic aquí!</button>
+
+    <script>
+      document
+        .getElementById("changeTextButton")
+        .addEventListener("click", function () {
+          this.innerText = "Botó clicat!";
+        });
+    </script>
+
+    <input type="text" id="nameInput" placeholder="Escriu el teu nom" />
+    <p id="nameOutput"></p>
+
+    <script>
+      document
+        .getElementById("nameInput")
+        .addEventListener("input", function () {
+          document.getElementById("nameOutput").innerText =
+            "Hola, " + this.value;
+        });
+    </script>
+
+    <button id="incrementButton">Clica per incrementar</button>
+    <p id="countDisplay">0</p>
+
+    <script>
+      let count = 0;
+
+      function incrementCount() {
+        count++;
+        document.getElementById("countDisplay").innerText = count;
+      }
+
+      document
+        .getElementById("incrementButton")
+        .addEventListener("click", incrementCount);
+    </script>
+    <button id="myButton">Clica'm</button>
+
+    <input type="text" id="myInput" placeholder="Escriu alguna cosa" />
+    <form id="myForm">
+      <input type="text" name="username" placeholder="Nom d'usuari" />
+      <button type="submit">Enviar</button>
+    </form>
+  </body>
 </html>
