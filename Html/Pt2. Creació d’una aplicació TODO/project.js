@@ -3,6 +3,11 @@ const taskContainer = document.getElementById("task-container");
 const inputTask = document.getElementById("input-task");
 
 addTask.addEventListener("click", function () {
+  if (inputTask.value === "") {
+    alert("Si us plau, introdueix una tasca");
+    return; // Salir de la función si la tarea está vacía
+  }
+
   let task = document.createElement("div");
   task.classList.add("task");
 
@@ -11,7 +16,7 @@ addTask.addEventListener("click", function () {
   task.appendChild(li);
 
   let checkButton = document.createElement("button");
-  checkButton.inHTML = '<i class="fa-check">>/i>';
+  checkButton.innerHTML = '<i class="fa-solid fa-check"></i>'; // Corregido aquí
   checkButton.classList.add("checkTask");
   task.appendChild(checkButton);
 
@@ -20,11 +25,16 @@ addTask.addEventListener("click", function () {
   deleteButton.classList.add("deleteTask");
   task.appendChild(deleteButton);
 
-  if (inputTask.value === "") {
-    alert("Si us plau, introdueix una tasca");
-  } else {
-    taskContainer.appendChild(task);
-  }
+  // Agregar evento para eliminar la tarea
+  deleteButton.addEventListener("click", function () {
+    taskContainer.removeChild(task);
+  });
+
+  // Agregar evento para marcar/desmarcar la tarea
+  checkButton.addEventListener("click", function () {
+    li.classList.toggle("completed");
+  });
+
+  taskContainer.appendChild(task);
   inputTask.value = "";
-  
 });

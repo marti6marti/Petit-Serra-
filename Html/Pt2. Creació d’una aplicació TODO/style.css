@@ -1,6 +1,6 @@
 body {
     height: 100vh;
-    background-color: rgb(199, 125, 228);
+    background-color: rgb(125, 190, 228);
   
     display: flex;
     justify-content: center;
@@ -49,4 +49,36 @@ input {
 
     padding: 5px;
     }
+}
+
+.completed {
+    text-decoration: line-through;
+    color: red;
+}
+
+.task {
+    width: 100%;
+    background-color: #fff;
+    border: 2px solid #fff;
+    border-radius: 10px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+    padding: 10px; 
+    margin-bottom: 10px;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    font-family: 'Arial', sans-serif;
+    font-size: 1.1rem; 
+}
+
+.task button {
+    flex: 1;
+    transition: 0.3s;
+    font-size: 1.2rem;
+    padding: 2px;
+    background-color: transparent; 
+    color: black; 
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 0 10px;
 }
