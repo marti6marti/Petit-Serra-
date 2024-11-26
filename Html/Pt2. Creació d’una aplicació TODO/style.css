@@ -5,27 +5,28 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
   
-  #add-task-container {
+#add-task-container {
     width: 350px;
     padding: 20px 10px;
     background: #fff;
     border-radius: 20px;
     box-shadow: 0 0 6px;
+    margin-bottom: 20px;
   
     display: flex;
-  }
+}
   
-  input {
+input {
     flex: 5;
     margin-right: 10px;
     border-radius: 10px;
     font-size: 1.2rem;
     padding: 5px;
-  }
+}
   
-  #add-task {
+#add-task {
     flex: 1;
     transition: 0.3s;
     font-size: 1.2rem;
@@ -34,9 +35,18 @@ body {
     color: rgb(216, 52, 84);
     border: #e41616;
     border-radius: 10px;
-  }
+}
   
-  #add-task:hover {
+#add-task:hover {
     background-color: #e41616;
     color: #fff;
-  }
+
+    .task {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 3px;
+
+    padding: 5px;
+    }
+}
