@@ -1,16 +1,15 @@
 package Ex8;
 
 public class Player {
-    private Position position; // Posició del jugador
-    private String name; // Nom del jugador
+    private Position position;
+    private String name;
 
-    // Constructor que inicialitza la posició del jugador
+
     public Player(Position position, String name) {
         this.position = position;
         this.name = name;
     }
 
-    // Mètodes per moure el jugador
     public void moveRight() {
         position.incX();
     }
@@ -27,7 +26,6 @@ public class Player {
         position.decY();
     }
 
-    // Getters i setters per al nom del jugador
     public String getName() {
         return name;
     }
@@ -36,13 +34,13 @@ public class Player {
         this.name = name;
     }
 
-    // Mètode per obtenir la posició del jugador
+
     public Position getPosition() {
         return position;
     }
 
-    // Mètode per obtenir una representació del jugador
-    @Override
+
+
     public String toString() {
         return "Player: " + name + ", Position: " + position.toString();
     }
