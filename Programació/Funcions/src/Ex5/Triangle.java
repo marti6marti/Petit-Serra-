@@ -29,14 +29,15 @@ public class Triangle {
         return side3;
     }
 
-    public void perimetre (){
-        System.out.println(side1 + side2 + side3);
+    public int perimetre (){
+        int perimetre = (side1 + side2 + side3);
+        return perimetre;
     }
 
-    public void area(){
+    public double area(){
         double s = ((side1+ side2 + side3)/2);
         double area = Math.pow(s*(s-side1)*(s-side2)*(s-side3),2);
-        System.out.println(area);
+        return area;
     }
 }
 

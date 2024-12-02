@@ -1,13 +1,20 @@
-package Ex9;
+package ex9;
 
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Game {
-    private static Player[] players = new Player[10];
-    private static int playerCount = 0;
+//    private static Player[] players = new Player[10];
+    static ArrayList<Player> players = new ArrayList<Player>();
+
+    private int playerCount = 1;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
+        Game game = new Game();
+
         String option;
 
         do {
@@ -23,16 +30,16 @@ public class Game {
 
             switch (option) {
                 case "a":
-                    addPlayer(scanner);
+                    game.addPlayer(scanner);
                     break;
                 case "b":
-                    removePlayer();
+                    game.removePlayer();
                     break;
                 case "c":
-                    resetGame();
+                    game.resetGame();
                     break;
                 case "d":
-                    displayPlayers();
+                    game.displayPlayers();
                     break;
                 case "e":
                     System.out.println("Sortint del joc...");
@@ -44,9 +51,9 @@ public class Game {
 
     }
 
-    private static void addPlayer(Scanner scanner) {
-        if (playerCount >= players.length) {
-            System.out.println("Error: No es poden afegir més jugadors. El màxim és " + players.length + ".");
+    private void addPlayer(Scanner scanner) {
+        if (players.size() <= 10) {
+            System.out.println("Error: No es poden afegir més jugadors. El màxim és " + players.size() + ".");
             return;
         }
 
@@ -59,35 +66,37 @@ public class Game {
         scanner.nextLine();
 
         Position position = new Position(x, y);
-        players[playerCount++] = new Player(position, name);
+        players.add(new Player(position, name));
+        players.set(players.size()+1, new Player(position, name));
         System.out.println("Jugador " + name + " afegit amb èxit.");
     }
 
 
-    private static void removePlayer() {
-        if (playerCount == 0) {
+    private void removePlayer() {
+        if (players.isEmpty()) {
             System.out.println("No hi ha jugadors per eliminar.");
             return;
+        } else {
+            System.out.println("Jugador " + players.get(players.size() - 1).getName() + " eliminat.");
+            players.set(players.size()-1, null);
         }
-        System.out.println("Jugador " + players[playerCount - 1].getName() + " eliminat.");
-        players[--playerCount] = null;
     }
 
-    private static void resetGame() {
-        players = new Player[10];
+    private void resetGame() {
+        players = new ArrayList<>();
         playerCount = 0;
         System.out.println("Partida reiniciada. Tots els jugadors han estat eliminats.");
     }
 
 
-    private static void displayPlayers() {
+    private void displayPlayers() {
         if (playerCount == 0) {
             System.out.println("No hi ha jugadors per mostrar.");
             return;
         }
         System.out.println("Jugadors:");
         for (int i = 0; i < playerCount; i++) {
-            System.out.println(players[i]);
+            System.out.println(players.get(i));
         }
     }
 }

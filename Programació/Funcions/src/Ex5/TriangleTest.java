@@ -9,8 +9,8 @@ public class TriangleTest {
         triangle1.setSide2(4);
         triangle1.setSide3(5);
 
-        triangle1.perimetre();
-        triangle1.area();
+        System.out.println(triangle1.perimetre());
+        System.out.println(triangle1.area());
 
     }
 }
