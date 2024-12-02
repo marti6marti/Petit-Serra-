@@ -41,8 +41,7 @@ public class Game {
                     System.out.println("Opció no vàlida. Torneu-ho a intentar.");
             }
         } while (option != "e");
-
-        scanner.close();
+        
     }
 
     private static void addPlayer(Scanner scanner) {
