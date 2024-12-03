@@ -1,20 +1,14 @@
-package ex9;
-
+package Ex9;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Game {
-//    private static Player[] players = new Player[10];
-    static ArrayList<Player> players = new ArrayList<Player>();
-
-    private int playerCount = 1;
+    private ArrayList<Player> players = new ArrayList<>();
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         Game game = new Game();
-
         String option;
 
         do {
@@ -47,13 +41,12 @@ public class Game {
                 default:
                     System.out.println("Opció no vàlida. Torneu-ho a intentar.");
             }
-        } while (option != "e");
-
+        } while (!option.equals("e")); // Usando equals para comparar Strings
     }
 
     private void addPlayer(Scanner scanner) {
-        if (players.size() <= 10) {
-            System.out.println("Error: No es poden afegir més jugadors. El màxim és " + players.size() + ".");
+        if (players.size() >= 10) { // Verificar si el número máximo de jugadores ha sido alcanzado
+            System.out.println("Error: No es poden afegir més jugadors. El màxim és 10.");
             return;
         }
 
@@ -63,40 +56,34 @@ public class Game {
         int x = scanner.nextInt();
         System.out.print("Introduïu la coordenada y: ");
         int y = scanner.nextInt();
-        scanner.nextLine();
+        scanner.nextLine(); // Limpiar el buffer
 
         Position position = new Position(x, y);
-        players.add(new Player(position, name));
-        players.set(players.size()+1, new Player(position, name));
+        players.add(new Player(position, name)); // Agregar el nuevo jugador a la lista
         System.out.println("Jugador " + name + " afegit amb èxit.");
     }
-
 
     private void removePlayer() {
         if (players.isEmpty()) {
             System.out.println("No hi ha jugadors per eliminar.");
             return;
-        } else {
-            System.out.println("Jugador " + players.get(players.size() - 1).getName() + " eliminat.");
-            players.set(players.size()-1, null);
         }
+        System.out.println("Jugador " + players.remove(players.size() - 1) + " eliminat amb èxit.");
     }
 
     private void resetGame() {
-        players = new ArrayList<>();
-        playerCount = 0;
-        System.out.println("Partida reiniciada. Tots els jugadors han estat eliminats.");
+        players.clear();
+        System.out.println("La partida ha estat reiniciada. Tots els jugadors han estat eliminats.");
     }
 
-
     private void displayPlayers() {
-        if (playerCount == 0) {
+        if (players.isEmpty()) {
             System.out.println("No hi ha jugadors per mostrar.");
             return;
         }
-        System.out.println("Jugadors:");
-        for (int i = 0; i < playerCount; i++) {
-            System.out.println(players.get(i));
+        System.out.println("Jugadors actuals:");
+        for (Player player : players) {
+            System.out.println(player);
         }
     }
 }

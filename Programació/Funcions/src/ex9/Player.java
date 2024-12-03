@@ -1,9 +1,8 @@
-package ex9;
+package Ex9;
 
 public class Player {
     private Position position;
     private String name;
-
 
     public Player(Position position, String name) {
         this.position = position;
@@ -34,14 +33,12 @@ public class Player {
         this.name = name;
     }
 
-
     public Position getPosition() {
         return position;
     }
-
-
 
     public String toString() {
         return "Player: " + name + ", Position: " + position.toString();
     }
 }
+

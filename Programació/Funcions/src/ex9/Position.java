@@ -1,4 +1,4 @@
-package ex9;
+package Ex9;
 
 public class Position {
     private int x;
