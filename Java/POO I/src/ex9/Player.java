@@ -1,4 +1,4 @@
-package Ex9;
+package ex9;
 
 public class Player {
     private Position position;

@@ -1,4 +1,4 @@
-package Ex9;
+package ex9;
 
 import java.util.ArrayList;
 import java.util.Scanner;
