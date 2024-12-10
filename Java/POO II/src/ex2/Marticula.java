@@ -15,4 +15,28 @@ public class Marticula {
         this.modul = new Modul();
         this.nota = 0;
     }
+
+    public Modul getModul() {
+        return modul;
+    }
+
+    public void setModul(Modul modul) {
+        this.modul = modul;
+    }
+
+    public int getNota() {
+        return nota;
+    }
+
+    public void setNota(int nota) {
+        this.nota = nota;
+    }
+
+    public Alumne getAlumne() {
+        return alumne;
+    }
+
+    public void setAlumne(Alumne alumne) {
+        this.alumne = alumne;
+    }
 }
