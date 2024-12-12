@@ -2,6 +2,7 @@ package ex5;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Test {
     public static void main(String[] args) {
@@ -14,27 +15,42 @@ public class Test {
         persona1.AfegirContracte(contracte1);
         persona1.AfegirContracte(contracte2);
 
-        for(Contracte contracte: persona1.getContractes()){
-            System.out.println(contracte.duradaContracte(contracte.getDataInici(), contracte.getDataFi()));
-        }
+        long sumatotal = 0;
 
 
-        ArrayList<Contracte> contractes = persona1.getContractes();
-        contractes.size()
-        contractes.add(new Contracte());
-        contractes.get(3);
-        contractes.set(0, new Contracte());
 
+        Scanner sc =new Scanner(System.in);
 
-        Contracte contracteAComparar = new Contracte();
+        System.out.println("1. Determinar la suma total de les durades dels contractes en dies.");
+        System.out.println("2. Determinar en quantes empreses diferents ha treballat.");
+        System.out.println("3. Signar un contracte per una empresa");
+        System.out.println("4. Determinar la durada d'un contracte en dies.");
+        System.out.println("5.sortir");
 
-        for(Contracte contracte: contractes){
+        int opcio = sc.nextInt();
+        boolean menu = true;
 
-            if(contracte.equals(contracteAComparar)){
-                
+            switch (opcio) {
+                case 1:
+                    for (Contracte contracte : persona1.getContractes()) {
+                        sumatotal += contracte.duradaContracte(contracte.getDataInici(), contracte.getDataFi());
+                    }
+
+                    System.out.println("La suma total de les durades dels contractes en dies es: " + sumatotal);
+
+                    break;
+                case 2:
+                    System.out.println(contracte1.getEmpresa());
+                    System.out.println(contracte2.getEmpresa());
+                    break;
+                case 4:
+                    for (Contracte contracte : persona1.getContractes()) {
+                        System.out.println(contracte.duradaContracte(contracte.getDataInici(), contracte.getDataFi()));
+                    }
+                    break;
+
             }
-
         }
 
     }
-}
+

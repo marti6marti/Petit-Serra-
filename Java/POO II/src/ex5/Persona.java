@@ -42,6 +42,7 @@ public class Persona {
         contractes.add(contracte);
     }
 
+
     @Override
     public String toString() {
         return "Persona{" +
