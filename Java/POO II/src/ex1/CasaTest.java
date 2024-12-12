@@ -17,9 +17,9 @@ public class CasaTest {
         IIcasa.getSalaCasa().setNumeroDeTelevisions(3);
 
 
-        System.out.println("I" + Icasa);
+        System.out.println(Icasa);
 
-        System.out.println("II"+IIcasa);
+        System.out.println(IIcasa);
 
     }
 

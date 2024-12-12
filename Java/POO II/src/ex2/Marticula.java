@@ -5,6 +5,15 @@ public class Marticula {
     private Modul modul;
     private int nota;
 
+    @Override
+    public String toString() {
+        return "Marticula{" +
+                "alumne=" + alumne +
+                ", modul=" + modul +
+                ", nota=" + nota +
+                '}';
+    }
+
     public Marticula(Alumne alumne, Modul modul, int nota) {
         this.alumne = alumne;
         this.modul = modul;
