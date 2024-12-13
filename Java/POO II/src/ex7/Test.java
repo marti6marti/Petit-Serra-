@@ -17,11 +17,9 @@ public class Test {
         habitacio1.getServeis().add(servei1);
 
         System.out.println(hotel1.getHabitacions());
-
-
-        //hotel1.NovaReserva();
-
         System.out.println(habitacio1.serveisisponibles());
+
+        hotel1.novaReserva(LocalDate.of(2024,1,5),LocalDate.of(2024,1,10));
 
 
     }
