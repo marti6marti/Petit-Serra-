@@ -49,5 +49,6 @@ public class Reserva {
                 ", habitacio=" + habitacio +
                 '}';
     }
+}
 
     

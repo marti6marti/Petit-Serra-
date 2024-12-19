@@ -29,9 +29,11 @@ public class Hotel {
         this.habitacions = habitacions;
     }
 
-//    public void novaReserva (){
-//        reservas.add();
-//    }
+    public void novaReserva (LocalDate entrada, LocalDate sortida){
+        Reserva reserva = new Reserva(entrada,sortida);
+        reservas.add(reserva);
+        System.out.println("S'ha reservat amb éxit");
+    }
 
 
 
