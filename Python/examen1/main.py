@@ -1,3 +1,4 @@
+from examen1.game import Player
 from game import Position
 from game import Weapon
 
@@ -12,7 +13,11 @@ def main():
     p3 = Position(2, 5)
     print(p3)
 
-    w1 = Weapon("Axe", 12)
+    w1 = Weapon("Axe", 12, 14)
+    print(w1)
+
+    player1 = Player("Manolo", p1, w1)
+    print(player1)
 
 
 if __name__ == '__main__':
