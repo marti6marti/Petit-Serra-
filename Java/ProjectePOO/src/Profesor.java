@@ -1,16 +1,17 @@
 public class Profesor extends Persona{
-    private String especialitzacio;
+    private String materia;
 
     public Profesor(String nom, int tel, String especialitzacio) {
         super(nom, tel);
-        this.especialitzacio = especialitzacio;
+        this.materia = especialitzacio;
     }
 
-    public String getEspecialitzacio() {
-        return especialitzacio;
+    public String getMateria() {
+        return materia;
     }
 
-    public void setEspecialitzacio(String especialitzacio) {
-        this.especialitzacio = especialitzacio;
+    public void setMateria(String materia) {
+        this.materia = materia;
     }
+
 }

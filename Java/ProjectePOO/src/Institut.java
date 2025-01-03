@@ -8,9 +8,9 @@ public class Institut {
 
     public Institut(String nom) {
         this.nom = nom;
-        this.espais = espais;
-        this.reservas = reservas;
-        this.personas = personas;
+        this.espais = new ArrayList<>();
+        this.reservas = new ArrayList<>();
+        this.personas = new ArrayList<>();
     }
 
     public String getNom() {
@@ -41,21 +41,26 @@ public class Institut {
         return personas;
     }
 
-    public void addEspai(Espai espai) {
-
-    }
-
     public void setPersonas(ArrayList<Persona> personas) {
         this.personas = personas;
     }
 
-    @Override
-    public String toString() {
-        return "Institut{" +
-                "nom='" + nom + '\'' +
-                ", espais=" + espais +
-                ", reservas=" + reservas +
-                ", personas=" + personas +
-                '}';
+    public void addEspai(Espai espai) {
+        espais.add(espai);
     }
+
+    public void addPersona(Persona persona) {
+        personas.add(persona);
+    }
+
+    public void addReserva(Reserva reserva) {
+        reservas.add(reserva);
+    }
+
+    public mostrarespais(){
+        for (int i = 0; i < setEspais(i); i++) {
+
+        }
+    }
+
 }
