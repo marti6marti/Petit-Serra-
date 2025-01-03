@@ -17,7 +17,10 @@ public class Alumne extends Persona {
     @Override
     public String toString() {
         return "Alumne{" +
-                "curs='" + curs + '\'' +
+                "nom='" + getNom() + '\'' +
+                ", tel=" + getTel() +
+                ", curs='" + curs + '\'' +
                 '}';
     }
+
 }

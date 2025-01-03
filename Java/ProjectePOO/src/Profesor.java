@@ -14,4 +14,12 @@ public class Profesor extends Persona{
         this.materia = materia;
     }
 
+    @Override
+    public String toString() {
+        return "Profesor{" +
+                "nom='" + getNom() + '\'' +
+                ", tel=" + getTel() +
+                ", materia='" + materia + '\'' +
+                '}';
+    }
 }

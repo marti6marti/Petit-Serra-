@@ -1,16 +1,26 @@
 import java.time.LocalDateTime;
 
 public class Reserva {
+    private int id;
     private Persona persona;
     private Espai espai;
     private LocalDateTime entrada;
     private LocalDateTime sortida;
 
-    public Reserva(Persona persona, Espai espai, LocalDateTime entrada, LocalDateTime sortida) {
+    public Reserva(int id, Persona persona, Espai espai, LocalDateTime entrada, LocalDateTime sortida) {
+        this.id = id;
         this.persona = persona;
         this.espai = espai;
         this.entrada = entrada;
         this.sortida = sortida;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Persona getPersona() {
@@ -48,7 +58,8 @@ public class Reserva {
     @Override
     public String toString() {
         return "Reserva{" +
-                "persona=" + persona +
+                "id=" + id +
+                ", persona=" + persona +
                 ", espai=" + espai +
                 ", entrada=" + entrada +
                 ", sortida=" + sortida +

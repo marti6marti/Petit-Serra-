@@ -24,11 +24,4 @@ public class Persona {
         this.tel = tel;
     }
 
-    @Override
-    public String toString() {
-        return "Persona{" +
-                "nom='" + nom + '\'' +
-                ", tel=" + tel +
-                '}';
-    }
 }
