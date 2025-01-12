@@ -1,6 +1,4 @@
 package arrayInvers;
-
-import java.lang.reflect.Array;
 import java.util.Scanner;
 
 public class arrayInvers {
@@ -8,17 +6,15 @@ public class arrayInvers {
         Scanner sc = new Scanner(System.in);
 
         int espais = sc.nextInt();
-        int[] arrayEstatic = new int[espais];
+        int[] array = new int[espais];
 
         for (int i = 0; i < espais; i++) {
             int valor = sc.nextInt();
-            arrayEstatic[i]=valor;
+            array[i]=valor;
         }
 
-        for(int i=espais; i>arrayEstatic.length; i--) {
-            System.out.print(arrayEstatic[i]);
+        for (int i = espais - 1; i >= 0; i--) {
+            System.out.print(array[i]);
         }
     }
-
-
 }
