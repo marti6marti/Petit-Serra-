@@ -1,7 +1,8 @@
-package arrayInvers;
+package sumaArrays;
+
 import java.util.Scanner;
 
-public class arrayInvers {
+public class sumaArrays {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -13,8 +14,12 @@ public class arrayInvers {
             array[i]=valor;
         }
 
-        for (int i = espais - 1; i >= 0; i--) {
-            System.out.print(array[i] + " ");
+
+        for (int i = 0; i < espais; i++) {
+            System.out.print(array[array.length -1] + array[i]+ " ");
         }
     }
 }
+
+
+
