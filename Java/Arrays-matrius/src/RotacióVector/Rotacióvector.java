@@ -28,7 +28,8 @@ public class Rotacióvector {
             }
         }else {
             for (int i = 0; i < espai1; i++) {
-                array2[i] = array1[(posisions +i)%espai1];
+//                array2[i] = array1[(posisions +i)%espai1];
+                array2[i] = array1[(espai1 + i - posisions % espai1) % espai1];
             }
             for (int i = 0; i < espai1; i++) {
                 System.out.print(array2[i] + " ");
