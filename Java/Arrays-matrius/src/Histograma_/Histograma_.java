@@ -14,18 +14,36 @@ public class Histograma_ {
         }
         Arrays.sort(pesos);
 
+//        for (int i = 0; i < 20; i++) {
+//            System.out.print(pesos[i] + " ");
+//        }
+//        System.out.println();
+
+        int[] repetits = new int[20];
+        int norepetit = 0;
+        int[] valorsdelsrepetits = new int[20];
+
         for (int i = 0; i < 20; i++) {
-            System.out.print(pesos[i] + " ");
+            if (i == 0 || pesos[i] != pesos[i - 1]) {
+                repetits[norepetit] = 1;
+                valorsdelsrepetits[norepetit] = pesos[i];
+                norepetit++;
+            }else {
+               repetits[norepetit -1]++;
+            }
         }
 
+//        for (int j = 0; j < norepetit; j++) {
+//            System.out.print(repetits[j] + " ");
+//        }
 
-
-        int repetit = 0;
-        for (int i = 0; i < 20; i++) {
-            if (pesos[i] == pesos[i+1]) {
-                repetit = repetit +1;
-                // un array per reps i un array per els nums
-
+        for (int i = 0; i < repetits.length; i++) {
+            if (!(repetits[i] == 0)) {
+                System.out.print( valorsdelsrepetits[i] + " ");
+                for (int j = 0; j < repetits[i]; j++) {
+                    System.out.print("-");
+                }
+                System.out.println();
             }
         }
     }
