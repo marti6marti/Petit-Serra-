@@ -1,6 +1,6 @@
 import json
 
-with open("data/frieda.json", mode="r", encoding="utf-8") as file:
+with open("../Fitxers josn/frieda.json", mode="r", encoding="utf-8") as file:
     data = json.load(file)
 
 print(type(data))
