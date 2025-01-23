@@ -43,7 +43,7 @@ public class BubbleSort_ {
         String[] nEquips = new String[n];
         int[] pEquips = new int[n];
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < nEquips.length; i++) {
             String nEquip = sc.next();
             nEquips[i] = nEquip;
             int pEquip = sc.nextInt();
@@ -52,9 +52,15 @@ public class BubbleSort_ {
 
         bubbleSort(pEquips,nEquips,n);
 
-        for (int i = n-1; i < n ; i--) {
-            System.out.print(nEquips[i] + " ");
-            System.out.println(pEquips[i]);
-        }
+
+            for (int i = n-1; i < n ; i--) {
+                if (!(i==-1)) {
+                System.out.print(nEquips[i] + " ");
+                System.out.println(pEquips[i]);
+                } else {
+                    break;
+                }
+            }
+
     }
 }
