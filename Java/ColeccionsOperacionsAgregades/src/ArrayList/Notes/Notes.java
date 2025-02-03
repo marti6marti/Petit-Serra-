@@ -1,4 +1,4 @@
-package ArrayList;
+package ArrayList.Notes;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -16,10 +16,13 @@ public class Notes {
 
     public void sumaValors (){
         Float suma= 0F;
+        int numeros = 0;
         for (int i = 0; i < notes.size(); i++) {
             suma += notes.get(i);
+            numeros =+ i;
         }
-        System.out.println(suma);
+        numeros = numeros +1;
+        System.out.println(suma/numeros);
     }
 
     public static void main(String[] args) {
