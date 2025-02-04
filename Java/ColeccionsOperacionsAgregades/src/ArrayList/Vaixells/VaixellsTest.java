@@ -1,10 +1,11 @@
 package ArrayList.Vaixells;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class VaixellsTest {
-
 
     private ArrayList<Vaixell> vaixells;
 
@@ -68,15 +69,31 @@ public class VaixellsTest {
         }
     }
 
-    public Vaixell deVellNou (){
-        
+
+    public void deVellANou() {
+        vaixells.sort(Comparator.comparingInt(Vaixell::getEdat));
+        vaixells.forEach(System.out::println);
     }
+
+
+    public void ordenarPerNom(){
+        vaixells.sort(Comparator.comparing(Vaixell::getNom).thenComparing(Vaixell::getPreu));
+        vaixells.forEach(System.out::println);
+    }
+
+    public void ordenarPerPreu() {
+        vaixells.sort(Comparator.comparing(Vaixell::getPreu));
+        vaixells.forEach(System.out::println);
+    }
+
 
 
     public static void main(String[] args) {
         VaixellsTest vt = new VaixellsTest();
-        Vaixell vaixell2 = new Vaixell("Nautilus",10F,5);
+        Vaixell vaixell2 = new Vaixell("Sunny",10F,5);
+        Vaixell vaixell3 = new Vaixell("Merry",100F,12);
         vt.vaixells.add(vaixell2);
+        vt.vaixells.add(vaixell3);
 
 
         Scanner sc = new Scanner(System.in);
@@ -110,8 +127,13 @@ public class VaixellsTest {
                     vt.trureVaixell();
                     break;
                 case 5:
+                    vt.deVellANou();
+                    break;
+                case 6:
+                    vt.ordenarPerNom();
                     break;
                 case 7:
+                    vt.ordenarPerPreu();
                     break;
                 case 8:
                     continuar = false;
