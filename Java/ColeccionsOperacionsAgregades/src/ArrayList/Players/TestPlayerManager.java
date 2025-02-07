@@ -24,17 +24,16 @@ public class TestPlayerManager {
         while (continuar) {
 
             System.out.println("\nPlayer management system:");
-            System.out.println("1. add a player to the list.");
-            System.out.println("2. remove a player from the list based on the player's name.");
-            System.out.println("3. return player based on playername");
-            System.out.println("4. update a player's score");
-            System.out.println("5. Tots els vaixells actuals (de més vell a més nou)");
-            System.out.println("6. Tots els vaixells actuals (per ordre lexicogràfic)");
-            System.out.println("7. Tots els vaixells actuals (de car a barat)");
-            System.out.println();
-            System.out.println("9. show all current players");
-            System.out.println("10. Exit");
-            System.out.print("Opció: ");
+            System.out.println("1. Add a player.");
+            System.out.println("2. Remove a player by name.");
+            System.out.println("3. Search for a player by name.");
+            System.out.println("4. Update a player's score.");
+            System.out.println("5. Show the top N players by score.");
+            System.out.println("6. Show players with a score above a certain value.");
+            System.out.println("7. Show the player with the highest score.");
+            System.out.println("8. Show all current players.");
+            System.out.println("9. Exit.");
+            System.out.print("Option: ");
             int opcio = sc.nextInt();
 
             switch (opcio) {
@@ -51,20 +50,22 @@ public class TestPlayerManager {
                     pm.updateScore();
                     break;
                 case 5:
-
+                    System.out.print("Enter the number of top players to show: ");
+                    int n = sc.nextInt();
+                    pm.showTopNPlayersByScore(n);
                     break;
                 case 6:
-
+                    System.out.print("Enter the minimum score: ");
+                    int minScore = sc.nextInt();
+                    pm.showPlayersAboveScore(minScore);
                     break;
                 case 7:
-
+                    pm.showHighestScoringPlayer();
                     break;
                 case 8:
-                    break;
-                case 9:
                     pm.allPlayers();
                     break;
-                case 10:
+                case 9:
                     continuar = false;
 
             }

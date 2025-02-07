@@ -27,9 +27,9 @@ public class TestBookManager {
             System.out.println("3. return a book based on the title of the book.");
             System.out.println("4. return a book based on the author of the book");
             System.out.println("5. update the rating of a book");
-            System.out.println("6. Tots els vaixells actuals (per ordre lexicogràfic)");
-            System.out.println("7. Tots els vaixells actuals (de car a barat)");
-            System.out.println();
+            System.out.println("6. return a descending ordered list of books based on ratings");
+            System.out.println("7. return a list of the best N books based on ratings");
+            System.out.println("8. return a list with books with a rating greater than a minRating value");
             System.out.println("9.remove a book from the list based on the book id.");
             System.out.println("10. Exit");
             System.out.print("Opció: ");
@@ -40,7 +40,7 @@ public class TestBookManager {
                     bm.newBook();
                     break;
                 case 2:
-                    System.out.println(bm.allbooks());
+                    bm.allbooks();
                     break;
                 case 3:
                     bm.searchBookTitle();
@@ -52,12 +52,17 @@ public class TestBookManager {
                     bm.updateRating();
                     break;
                 case 6:
-
+                    bm.getAllBooksByRating();
                     break;
                 case 7:
-
+                    System.out.print("Enter the number of books to display: ");
+                    int numberGetBooks = sc.nextInt();
+                    bm.getNBooksByRating(numberGetBooks);
                     break;
                 case 8:
+                    System.out.print("Enter the minimum rating: ");
+                    int minRating = sc.nextInt();
+                    bm.getBooksByMinRating(minRating);
                     break;
                 case 9:
                     bm.delBookID();

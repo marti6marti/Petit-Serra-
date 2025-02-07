@@ -2,6 +2,7 @@ package ArrayList.Books;
 
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class BookManager {
@@ -76,17 +77,15 @@ public class BookManager {
         return null;
     }
 
-    public Book allbooks(){
+    public void allbooks(){
         for (Book book : books) {
-            return book;
+            System.out.print(book);
+            System.out.println();
         }
-        return null;
     }
 
     public void updateRating(){
         Scanner sc = new Scanner(System.in);
-//        System.out.println("Enter the Book title to modify the rating: ");
-//        String titleBook = sc.next();
 
         Book book = this.searchBookTitle();
 
@@ -96,6 +95,31 @@ public class BookManager {
             book.setRating(rating);
         }
     }
+
+    public void getAllBooksByRating(){
+        books.sort(bookComparatorByRating.reversed());
+        books.forEach(System.out::println);
+    }
+
+    public void getNBooksByRating(int numberGetBooks){
+        books.sort(bookComparatorByRating.reversed());
+        var subList = books.subList(0,numberGetBooks);
+        subList.forEach(System.out::println);
+
+    }
+
+    public ArrayList<Book> getBooksByMinRating(int minRating){
+        var newBooks = new ArrayList<Book>();
+        for (Book book: books){
+            if (book.getRating() > minRating){
+                newBooks.add(book);
+            }
+        }
+        newBooks.forEach(System.out::println);
+        return newBooks;
+    }
+
+    public Comparator<Book> bookComparatorByRating = Comparator.comparingInt(Book::getRating);
 
     public void delBookID(){
        books.remove(searchBookID());

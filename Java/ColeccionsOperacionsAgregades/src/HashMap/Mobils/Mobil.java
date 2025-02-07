@@ -34,4 +34,13 @@ public class Mobil {
     public void setNum(int num) {
         this.num = num;
     }
+
+    @Override
+    public String toString() {
+        return "Mobil{" +
+                "marca='" + marca + '\'' +
+                ", model='" + model + '\'' +
+                ", num=" + num +
+                '}';
+    }
 }

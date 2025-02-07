@@ -1,6 +1,7 @@
 package ArrayList.Players;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class PlayerManager {
@@ -51,8 +52,6 @@ public class PlayerManager {
 
     public void updateScore(){
         Scanner sc = new Scanner(System.in);
-//        System.out.println("Enter the player name to modify the score: ");
-//        String namePlayer = sc.next();
 
         Player player = this.searchPlayerName();
 
@@ -63,10 +62,46 @@ public class PlayerManager {
         }
     }
 
-    public Player allPlayers(){
-        for (Player player: players){
-            return player;
+    public void showTopNPlayersByScore(int n) {
+        players.sort(new Comparator<Player>() {
+            @Override
+            public int compare(Player player1, Player player2) {
+                return Integer.compare(player2.getScore(), player1.getScore());
+            }
+        });
+        for (int i = 0; i < n && i < players.size(); i++) {
+            System.out.println(players.get(i));
         }
-        return null;
+    }
+
+
+    public void showPlayersAboveScore(int minScore) {
+        for (Player player : players) {
+            if (player.getScore() > minScore) {
+                System.out.println(player);
+            }
+        }
+    }
+
+
+    public void showHighestScoringPlayer() {
+        if (players.isEmpty()) {
+            System.out.println("No players available.");
+            return;
+        }
+
+        Player highestScoringPlayer = players.get(0);
+        for (Player player : players) {
+            if (player.getScore() > highestScoringPlayer.getScore()) {
+                highestScoringPlayer = player;
+            }
+        }
+        System.out.println("The player with the highest score: " + highestScoringPlayer);
+    }
+
+    public void allPlayers(){
+        for (Player player: players){
+            System.out.println(player);
+        }
     }
 }
