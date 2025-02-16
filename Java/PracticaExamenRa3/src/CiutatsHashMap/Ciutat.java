@@ -1,4 +1,4 @@
-package Ciutats;
+package CiutatsHashMap;
 
 import java.util.Objects;
 

@@ -2,10 +2,10 @@ package mobils2;
 
 public class Test {
     public static void main(String[] args) {
-        Inventari inventari = new Inventari();
+        Manager inventari = new Manager();
 
         // Afegir mòbils
-        System.out.println("\n📌 Afegint mòbils...");
+        System.out.println("\n Afegint mòbils...");
         inventari.afegirMobil("12345678A", new Mobil("Samsung", "Galaxy S21", "666111222"));
         inventari.afegirMobil("87654321B", new Mobil("Apple", "iPhone 14", "677222333"));
         inventari.afegirMobil("11223344C", new Mobil("Xiaomi", "Redmi Note 11", "688333444"));

@@ -3,10 +3,10 @@ package mobils2;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Inventari {
+public class Manager {
     private HashMap<String, Mobil> inventari;
 
-    public Inventari() {
+    public Manager() {
         this.inventari = new HashMap<>();
     }
 
