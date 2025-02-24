@@ -1,4 +1,4 @@
-package PT1;
+package PT1.School;
 
 public class Person {
     public String name;

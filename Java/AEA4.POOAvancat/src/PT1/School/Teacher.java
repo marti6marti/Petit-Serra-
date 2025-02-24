@@ -1,8 +1,8 @@
-package PT1;
+package PT1.School;
 
 import java.util.HashSet;
 
-public class Teacher extends Person{
+public class Teacher extends Person {
     HashSet<String> subjects;
 
     public Teacher() {

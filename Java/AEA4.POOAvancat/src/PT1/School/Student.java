@@ -1,6 +1,6 @@
-package PT1;
+package PT1.School;
 
-public class Student extends Person{
+public class Student extends Person {
     public String cycle;
     public int course;
 
