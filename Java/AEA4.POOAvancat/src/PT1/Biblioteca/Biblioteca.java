@@ -12,7 +12,7 @@ public class Biblioteca {
 
     public void comprobarReferencia(Fitxa newFitxa){
         for (Fitxa f : fitxes){
-            if (newFitxa.equals(f)){
+            if (f.equals(newFitxa)){
                 System.out.println("Aquesta referencia ja existeix");
             } else {
                 System.out.println("afegit");
