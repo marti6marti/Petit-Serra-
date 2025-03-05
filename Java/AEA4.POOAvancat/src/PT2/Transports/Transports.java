@@ -1,6 +1,6 @@
 package PT2.Transports;
 
-public class Transports {
+public abstract class Transports {
     public int id;
     public double velocitat;
 
@@ -24,4 +24,6 @@ public class Transports {
     public void setVelocitat(double velocitat) {
         this.velocitat = velocitat;
     }
+
+    public abstract double factura(double KmRecorre);
 }

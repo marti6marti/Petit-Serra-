@@ -15,4 +15,9 @@ public class Bicicleta extends Transports{
     public void setNumMarxes(int numMarxes) {
         NumMarxes = numMarxes;
     }
+
+    @Override
+    public double factura(double KmRecorre) {
+        return 0;
+    }
 }

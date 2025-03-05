@@ -35,4 +35,10 @@ public double consumLperKM;
     public void setConsumLperKM(double consumLperKM) {
         this.consumLperKM = consumLperKM;
     }
+
+
+    @Override
+    public double factura(double KmRecorre) {
+
+    }
 }

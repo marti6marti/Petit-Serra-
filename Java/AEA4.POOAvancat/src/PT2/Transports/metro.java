@@ -2,12 +2,10 @@ package PT2.Transports;
 
 public class metro extends Transports{
     public double preuBilletInicial;
-    public double km;
 
-    public metro(int id, double velocitat, double preuBilletInicial, double km) {
+    public metro(int id, double velocitat, double preuBilletInicial) {
         super(id, velocitat);
         this.preuBilletInicial = preuBilletInicial;
-        this.km = km;
     }
 
     public double getPreuBilletInicial() {
@@ -18,16 +16,10 @@ public class metro extends Transports{
         this.preuBilletInicial = preuBilletInicial;
     }
 
-    public double getKm() {
-        return km;
+    @Override
+    public double factura(double KmRecorre) {
+        double copsCobrar = KmRecorre/5;
+        return preuBilletInicial + copsCobrar;
     }
 
-    public void setKm(double km) {
-        this.km = km;
-    }
-
-    public double preuBillet(){
-        double copsCobrar = km/5;
-        
-    }
 }
