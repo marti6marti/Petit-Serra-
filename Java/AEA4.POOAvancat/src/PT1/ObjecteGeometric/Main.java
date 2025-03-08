@@ -1,6 +1,6 @@
 package PT1.ObjecteGeometric;
 
-public class main {
+public class Main {
     public static void main(String[] args) {
         Cercle cercle = new Cercle(2,4,"blau",5);
         Quadrat quadrat = new Quadrat(5,6,"negre",5);

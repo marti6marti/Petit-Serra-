@@ -58,7 +58,7 @@ public class Empleat {
 
     public boolean comprovaNom(){
         if (nom == ""){
-            System.out.println("el està buit");
+            System.out.println("el nom està buit");
             return false;
         } else {
             System.out.println("te un nom");

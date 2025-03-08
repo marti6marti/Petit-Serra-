@@ -1,11 +1,11 @@
 package PT2.Transports;
 
-public class Cotxes extends Transports {
+public class Cotxe extends Transports {
 public String tipusGasolina;
 public double preuLitre;
 public double consumLperKM;
 
-    public Cotxes(int id, double velocitat, String tipusGasolina, double preuLitre, double consumLperKM) {
+    public Cotxe(int id, double velocitat, String tipusGasolina, double preuLitre, double consumLperKM) {
         super(id, velocitat);
         this.tipusGasolina = tipusGasolina;
         this.preuLitre = preuLitre;
@@ -39,6 +39,6 @@ public double consumLperKM;
 
     @Override
     public double factura(double KmRecorre) {
-
+        return (KmRecorre * consumLperKM) * preuLitre;
     }
 }

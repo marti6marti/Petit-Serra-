@@ -1,7 +1,7 @@
-package PT1.Biblioteca;
+package PT1.Biblioteca2.Biblioteca;
 
 
-public class Obra extends Fitxa{
+public class Obra extends Fitxa {
     public String autor;
     public short nrePags;
 

@@ -1,6 +1,6 @@
-package PT1.Biblioteca;
+package PT1.Biblioteca2.Biblioteca;
 
-public class Volum extends Obra{
+public class Volum extends Obra {
     public short nro;
 
     public Volum(String referencia, String titol, String autor, short nrePags, short nro) {

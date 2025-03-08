@@ -1,9 +1,9 @@
 package PT2.Transports;
 
-public class metro extends Transports{
+public class Metro extends Transports{
     public double preuBilletInicial;
 
-    public metro(int id, double velocitat, double preuBilletInicial) {
+    public Metro(int id, double velocitat, double preuBilletInicial) {
         super(id, velocitat);
         this.preuBilletInicial = preuBilletInicial;
     }

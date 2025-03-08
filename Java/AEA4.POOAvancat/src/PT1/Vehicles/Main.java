@@ -1,6 +1,6 @@
 package PT1.Vehicles;
 
-public class main {
+public class Main {
     public static void main(String[] args) {
 
         Vehicle vehicle1 = new Cotxe("1A",4,2);

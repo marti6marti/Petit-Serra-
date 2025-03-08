@@ -25,5 +25,15 @@ public abstract class Transports {
         this.velocitat = velocitat;
     }
 
+    public void temps(double KmRecorre){
+        double temps = KmRecorre/velocitat;
+        int hores = (int) temps;
+        double minutsDecimal = (temps - hores) * 60;
+        int minuts = (int) minutsDecimal;
+        int segons = (int) ((minutsDecimal - minuts) * 60);
+
+        System.out.println("Tardarà: " + hores + " hores, " + minuts + " minuts i " + segons + " segons.");
+    }
+
     public abstract double factura(double KmRecorre);
 }

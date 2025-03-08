@@ -1,4 +1,6 @@
-package PT1.Biblioteca;
+package PT1.Biblioteca1;
+
+import PT1.Biblioteca1.Biblioteca.*;
 
 public class ProvaFitxes {
     public static void main(String[] args) {
@@ -8,10 +10,11 @@ public class ProvaFitxes {
         Fitxa fitxa4 = new Revista("32","peix",(short)2006,(short)14);
 
         Biblioteca b1 = new Biblioteca();
-        b1.comprobarReferencia(fitxa1);
-        b1.comprobarReferencia(fitxa2);
-        b1.comprobarReferencia(fitxa3);
-        b1.comprobarReferencia(fitxa4);
+
+        b1.comprobarReferenciaPerAdd(fitxa1);
+        b1.comprobarReferenciaPerAdd(fitxa2);
+        b1.comprobarReferenciaPerAdd(fitxa3);
+        b1.comprobarReferenciaPerAdd(fitxa4);
 
 
     }
