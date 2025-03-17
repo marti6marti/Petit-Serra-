@@ -1,4 +1,4 @@
-package PT1.Vehicles;
+package PT1_Herència.Vehicles;
 
 public class Main {
     public static void main(String[] args) {

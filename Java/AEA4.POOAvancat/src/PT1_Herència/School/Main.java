@@ -1,4 +1,4 @@
-package PT1.School;
+package PT1_Herència.School;
 
 public class Main {
     public static void main(String[] args) {

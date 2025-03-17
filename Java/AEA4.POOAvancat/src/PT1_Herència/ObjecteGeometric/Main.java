@@ -1,4 +1,4 @@
-package PT1.ObjecteGeometric;
+package PT1_Herència.ObjecteGeometric;
 
 public class Main {
     public static void main(String[] args) {

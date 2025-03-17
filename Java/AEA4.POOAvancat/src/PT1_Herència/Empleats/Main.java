@@ -1,7 +1,8 @@
-package PT1.Empleats;
+package PT1_Herència.Empleats;
 
 public class Main {
     public static void main(String[] args) {
+
         Empleat e1 = new Comercial("Marti","Serra", 18,2000,5);
         Empleat e2 = new Repartidor("Biel", "Font", 18,2500,"Figueres","pitzza");
 
