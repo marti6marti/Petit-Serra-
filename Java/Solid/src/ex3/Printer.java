@@ -1,6 +1,5 @@
-package ActivitatsSOLID.ex3;
+package ex3;
 
 interface Printer {
-
     void printDocument();
 }

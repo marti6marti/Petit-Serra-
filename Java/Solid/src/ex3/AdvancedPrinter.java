@@ -1,4 +1,4 @@
-package ActivitatsSOLID.ex3;
+package ex3;
 
 class AdvancedPrinter implements Printer, SendFax {
 	@Override

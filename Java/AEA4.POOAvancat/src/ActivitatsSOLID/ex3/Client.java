@@ -1,29 +1,32 @@
 package ActivitatsSOLID.ex3;
 
-// import java.util.ArrayList;
-// import java.util.List;
+import java.util.ArrayList;
+ import java.util.List;
 
 
 class Client {
 
     public static void main(String[] args) {
-        Printer printer = new AdvancedPrinter();
-        printer.printDocument();
-        printer.sendFax();
+        Printer advancedPrinter = new AdvancedPrinter();
+        advancedPrinter.printDocument();
+//        AdvancedPrinter.sendFax();
 
-        printer = new BasicPrinter();
-        printer.printDocument();
-        // printer.sendFax();//Will throw error
+        Printer BasicPrinter = new BasicPrinter();
+        BasicPrinter.printDocument();
+//        BasicPrinter.sendFax();//Will throw error
 
-        /*
-         * List<Printer> printers = new ArrayList<Printer>(); printers.add(new
-         * AdvancedPrinter()); printers.add(new BasicPrinter());
-         *
-         * for (Printer device : printers) { device.printDocument(); //
-         * device.sendFax(); // Will throw error } //
-         * printers.forEach(Printer::printDocument);//ok
-         *
-         */
+
+//         List<Printer> printers = new ArrayList<Printer>();
+//         printers.add(new dvancedPrinter());
+//         printers.add(new BasicPrinter());
+//
+//         for (Printer device : printers) {
+//             device.printDocument();
+//            device.sendFax(); // Will throw error
+//         }
+//        printers.forEach(Printer::printDocument);//ok
+
+
 
     }
 
