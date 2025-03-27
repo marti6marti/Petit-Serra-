@@ -1,22 +1,19 @@
-package   ex2;
+package ex2;
 
-class Student {
+abstract class Student {
     String name;
     String regNumber;
-    String department;
     double score;
+    String department;
 
-    public Student(String name, String regNumber, double score, String dept) {
+    public Student(String name, String regNumber, double score) {
         this.name = name;
         this.regNumber = regNumber;
         this.score = score;
-        this.department = dept;
     }
 
-    @Override
     public String toString() {
         return ("Name: " + name + "\nReg Number: " + regNumber + "\nDept:" + department + "\nMarks:"
                 + score + "\n*******");
     }
-
 }
