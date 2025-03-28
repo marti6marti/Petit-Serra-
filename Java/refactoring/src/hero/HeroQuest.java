@@ -4,56 +4,83 @@ import java.util.Objects;
 
 public class HeroQuest {
 
-    public static String playerToString(String playerName, int playerHealth, int playerStrength, int playerMagic, int playerCraftingSkill) {
-        return String.format("%s's Attributes:\nHealth: %d\nStrength: %d\nMagic: %d\nCrafting Skill: %d\n",
-                playerName, playerHealth, playerStrength, playerMagic, playerCraftingSkill);
+    private Item item;
+    private Player player;
+
+    public HeroQuest(Item item, Player player) {
+        this.item = item;
+        this.player = player;
     }
 
-    public static void playerFallsDown(QuestData questData) {
+    public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public String playerToString() {
+        return String.format("%s's Attributes:\nHealth: %d\nStrength: %d\nMagic: %d\nCrafting Skill: %d\n",
+                player.getPlayerName(), player.getPlayerHealth(),player.getPlayerStrength(), player.getPlayerMagic(), player.getPlayerCraftingSkill());
+    }
+
+    public void playerFallsDown() {
         System.out.println("Player drops off a cliff.");
 
-        if (questData.getPlayerStrength() < 5) {
-            questData.setPlayerHealth(questData.getPlayerHealth() - 10);
+        if (player.getPlayerStrength() < 5) {
+            player.setPlayerHealth(player.getPlayerHealth() - 10);
             System.out.println("Player's strength is too small. Health decreases by 10.");
         }
     }
 
-    public static String itemToString(String itemName, String itemKind, int itemPower) {
-        return String.format("Item: %s\nKind: %s\nPower: %d\n", itemName, itemKind, itemPower);
+    public String itemToString() {
+        return String.format("Item: %s\nKind: %s\nPower: %d\n", item.getItemName(), item.getItemKind(), item.getItemPower());
     }
 
-    public static void itemReduceByUsage(QuestData questData) {
-        System.out.println(String.format("Using the item with kind '%s' and power %d", questData.getItemKind(), questData.getItemPower()));
+    public void itemReduceByUsage() {
+        System.out.println(String.format("Using the item with kind '%s' and power %d", item.getItemKind(), item.getItemPower()));
 
-        questData.setItemPower(questData.getItemPower() / 2);
+        item.setItemPower(item.getItemPower() / 2);
 
-        if (questData.getItemPower() == 0) {
-            questData.setItemKind("Junk");
+        if (item.getItemPower() == 0) {
+            item.setItemKind("Junk");
         }
 
     }
 
-    public static void itemApplyEffectToPlayer(QuestData data) {
-        System.out.println(String.format("Applying the effect of %s (%s):", data.getItemName(), data.getItemKind()));
-
-        if (Objects.equals(data.getItemKind(), "Health")) {
-            data.setPlayerHealth(data.getPlayerHealth() + data.getItemPower());
-        } else if (Objects.equals(data.getItemKind(), "Strength")) {
-            data.setPlayerStrength(data.getPlayerStrength() + data.getItemPower());
-        } else if (Objects.equals(data.getItemKind(), "Magic")) {
-            data.setPlayerMagic(data.getPlayerMagic() + data.getItemPower());
-        } else {
-            // ignore unknown item kind
+    public void itemApplyEffectToPlayer() {
+        System.out.printf("Applying the effect of %s (%s):%n", item.getItemName(), item.getItemKind());
+        switch (item.getItemKind()){
+            case "Health":
+                player.setPlayerHealth(player.getPlayerHealth() + item.getItemPower());
+                break;
+            case "Strength":
+                player.setPlayerStrength(player.getPlayerStrength() + item.getItemPower());
+                break;
+            case "Magic":
+                player.setPlayerMagic(player.getPlayerMagic() + item.getItemPower());
+                break;
+            default:
+                break;
         }
     }
 
-    public static void itemRepair(QuestData questData) {
+    public void itemRepair() {
         System.out.println("Using the repair skill to fix the item:");
 
-        int repairAmount = -5 + ((questData.getPlayerCraftingSkill() * 2) + 1);
+        int repairAmount = -5 + ((player.getPlayerCraftingSkill() * 2) + 1);
 
-        questData.setItemPower(questData.getItemPower() + repairAmount);
+        item.setItemPower(item.getItemPower() + repairAmount);
 
-        System.out.println(String.format("Repaired the item by %d points. Item's Durability: %d", repairAmount, questData.getItemPower()));
+        System.out.println(String.format("Repaired the item by %d points. Item's Durability: %d", repairAmount, item.getItemPower()));
     }
 }
