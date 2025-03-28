@@ -1,8 +1,7 @@
 package   ex4;
 
-interface Payment {
+interface PreviousPaymentInfo {
 
     void previousPaymentInfo();
 
-    void newPayment();
 }

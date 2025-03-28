@@ -1,16 +1,12 @@
 package   ex4;
 
-class GuestUserPayment implements Payment {
+class GuestUserPreviousPaymentInfo implements NewPayment {
     String name;
 
-    public GuestUserPayment() {
+    public GuestUserPreviousPaymentInfo() {
         this.name = "guest";
     }
 
-    @Override
-    public void previousPaymentInfo() {
-        throw new UnsupportedOperationException();
-    }
 
     @Override
     public void newPayment() {

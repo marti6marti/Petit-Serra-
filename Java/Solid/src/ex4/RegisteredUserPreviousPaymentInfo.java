@@ -1,9 +1,9 @@
 package   ex4;
 
-class RegisteredUserPayment implements Payment {
+class RegisteredUserPreviousPaymentInfo implements PreviousPaymentInfo ,NewPayment {
     String name;
 
-    public RegisteredUserPayment(String userName) {
+    public RegisteredUserPreviousPaymentInfo(String userName) {
         this.name = userName;
     }
 
