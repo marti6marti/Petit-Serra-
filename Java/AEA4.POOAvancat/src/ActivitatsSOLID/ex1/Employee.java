@@ -1,7 +1,5 @@
 package ActivitatsSOLID.ex1;
 
-import java.util.Random;
-
 class Employee {
     public String firstName, lastName, empId;
     public double experienceInYears;

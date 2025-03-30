@@ -6,36 +6,55 @@ import java.util.List;
 class Client {
 
     public static void main(String[] args) {
-        List<Student> enrolledStudents = enrollStudents();
+        System.out.println("*** A demo that follows the OCP.***");
+        List<Student> scienceStudents = enrollScienceStudents();
+        List<Student> artsStudents = enrollArtsStudents();
+
+//		List<Student> students = new ArrayList<>(scienceStudents);
+//		students.addAll(artsStudents);
 
         // Display all results.
         System.out.println("===Results:===");
-        for (Student student : enrolledStudents) {
+
+        for (Student student : scienceStudents) {
+            System.out.println(student);
+        }
+        for (Student student : artsStudents) {
             System.out.println(student);
         }
 
+        // Evaluate distinctions.
+
+        DistinctionDecider scienceDistinctionDecider = new ScienceDistinctionDecider();
+        DistinctionDecider artsDistinctionDecider = new ArtsDistinctionDecider();
+
         System.out.println("===Distinctions:===");
-        DistinctionDecider distinctionDecider = new DistinctionDecider();
-        // Evaluate distinctions.          
-        for (Student student : enrolledStudents) {
-            distinctionDecider.evaluateDistinction(student);
+
+        for (Student student : scienceStudents) {
+            scienceDistinctionDecider.evaluateDistinction(student);
         }
+        for (Student student : artsStudents) {
+            artsDistinctionDecider.evaluateDistinction(student);
+        }
+
     }
 
-    private static List<Student> enrollStudents() {
-        Student sam = new Student("Sam", "R1", 81.5, "Comp.Sc.");
-        Student bob = new Student("Bob", "R2", 72, "Physics");
-        Student john = new Student("John", "R3", 71, "History");
-        Student kate = new Student("Kate", "R4", 66.5, "English");
-
-        List<Student> students = new ArrayList<Student>();
-        students.add(sam);
-        students.add(bob);
-        students.add(john);
-        students.add(kate);
-        return students;
+    private static List<Student> enrollScienceStudents() {
+        Student sam = new ScienceStudent("Sam", "R1", 81.5, "Comp.Sc.");
+        Student bob = new ScienceStudent("Bob", "R2", 72, "Physics");
+        List<Student> scienceStudents = new ArrayList<>();
+        scienceStudents.add(sam);
+        scienceStudents.add(bob);
+        return scienceStudents;
     }
+
+    private static List<Student> enrollArtsStudents() {
+        Student john = new ArtsStudent("John", "R3", 71, "History");
+        Student kate = new ArtsStudent("Kate", "R4", 66.5, "English");
+        List<Student> artsStudents = new ArrayList<>();
+        artsStudents.add(john);
+        artsStudents.add(kate);
+        return artsStudents;
+    }
+
 }
-
-
-

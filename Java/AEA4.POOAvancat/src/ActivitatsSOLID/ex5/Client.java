@@ -3,12 +3,16 @@ package ActivitatsSOLID.ex5;
 class Client {
     public static void main(String[] args) {
 
-        SqlDatabase sql = new SqlDatabase();
-        OracleDatabase orq = new OracleDatabase();
+        SaveDB sql = new SqlDatabase();
+        SaveDB oracle = new OracleDatabase();
 
-// First you choose what type of database you want to add the employment to.
-        sql.saveIDdb("12312");
-        orq.saveIDdb("2m2m2");
+
+        Person person1 = new Person(sql);
+        Person person2 = new Person(oracle);
+
+
+        person1.saveID("12312");
+        person2.saveID("2m2m2");
 
     }
 }
