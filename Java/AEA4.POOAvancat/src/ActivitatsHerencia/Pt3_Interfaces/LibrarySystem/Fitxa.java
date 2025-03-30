@@ -11,13 +11,9 @@ public abstract class Fitxa {
         this.anypublicat = anypublicat;
     }
 
-    public String getCodi() {
-        return codi;
-    }
+    public abstract String getCodi();
 
-    public int getAnypublicat() {
-        return anypublicat;
-    }
+    public abstract int getAnypublicat();
 
     @Override
     public String toString() {

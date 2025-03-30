@@ -10,6 +10,16 @@ public class Revista extends Fitxa{
 
 
     @Override
+    public String getCodi() {
+        return codi;
+    }
+
+    @Override
+    public int getAnypublicat() {
+        return anypublicat;
+    }
+
+    @Override
     public String toString() {
         return "Revista{" +
                 "nombre=" + nombre +

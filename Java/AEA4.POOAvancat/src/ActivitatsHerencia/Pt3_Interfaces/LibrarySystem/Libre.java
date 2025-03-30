@@ -13,6 +13,16 @@ public class Libre extends Fitxa implements Prestable{
     }
 
     @Override
+    public String getCodi() {
+        return codi;
+    }
+
+    @Override
+    public int getAnypublicat() {
+        return anypublicat;
+    }
+
+    @Override
     public String toString() {
         return "Libre{" +
                 "prestat=" + prestat +

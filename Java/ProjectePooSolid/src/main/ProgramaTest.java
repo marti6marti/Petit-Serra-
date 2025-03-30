@@ -43,10 +43,12 @@ public class ProgramaTest {
             System.out.println("\nMenú del model.institute.Institut:");
             System.out.println("1. Espais disponibles");
             System.out.println("2. Mostra totes les resrvas");
+            System.out.println("5. Buscar reserves a partir del nom d'una persona");
+
             System.out.println("3. Registre't");
             System.out.println("4. Fer una reserva");
-            System.out.println("5. Buscar reserves a partir del nom d'una persona");
             System.out.println("6. Anular reserva");
+
             System.out.println("7. Sortir");
             System.out.print("Opció: ");
             int opcio = scanner.nextInt();
