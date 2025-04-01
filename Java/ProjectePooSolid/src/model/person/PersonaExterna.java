@@ -14,7 +14,7 @@ public class PersonaExterna extends Persona {
 
     @Override
     public String toString() {
-        return "model.person.PersonaExterna{" +
+        return "PersonaExterna{" +
                 "nom='" + getNom() + '\'' +
                 ", tel=" + getTel() +
                 '}';

@@ -62,7 +62,7 @@ public class Reserva {
 
     @Override
     public String toString() {
-        return "model.booking.Reserva{" +
+        return "Reserva{" +
                 "id=" + id +
                 ", persona=" + persona +
                 ", espai=" + espai +

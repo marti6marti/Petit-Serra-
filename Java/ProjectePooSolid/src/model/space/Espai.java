@@ -27,7 +27,7 @@ public class Espai {
 
     @Override
     public String toString() {
-        return "model.person.space.Espai{" +
+        return "Espai{" +
                 "Nom='" + Nom + '\'' +
                 ", metrosQ=" + metrosQ +
                 '}';

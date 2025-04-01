@@ -19,9 +19,9 @@ public class NovaReserva {
 
         // persona
         System.out.println("Qui fa la reserva?");
-        System.out.println("1. model.person.Alumne");
-        System.out.println("2. model.person.Profesor");
-        System.out.println("3. model.person.Persona Externa");
+        System.out.println("1. Alumne");
+        System.out.println("2. Profesor");
+        System.out.println("3. Persona Externa");
         int opcioPersona = scanner.nextInt();
         Persona personaReserva = null;
 
@@ -62,7 +62,7 @@ public class NovaReserva {
         }
 
         if (personaReserva == null) {
-            System.out.println("model.person.Persona no trobada.");
+            System.out.println("Persona no trobada.");
         }
 
         //espai
@@ -82,7 +82,7 @@ public class NovaReserva {
         }
 
         if (espaiReserva == null) {
-            System.out.println("model.person.space.Espai no trobat.");
+            System.out.println("Espai no trobat.");
         }
 
 

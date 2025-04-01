@@ -15,7 +15,7 @@ public class Profesor extends Persona {
 
     @Override
     public String toString() {
-        return "model.person.Profesor{" +
+        return "Profesor{" +
                 "nom='" + getNom() + '\'' +
                 ", tel=" + getTel() +
                 ", materia='" + materia + '\'' +
