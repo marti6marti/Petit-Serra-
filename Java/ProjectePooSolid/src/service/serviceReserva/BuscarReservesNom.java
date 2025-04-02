@@ -3,25 +3,20 @@ package service.serviceReserva;
 import model.booking.Reserva;
 import model.institute.Institut;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
-public class BuscarReservesNom implements SearchReservesNom {
-    Scanner scanner = new Scanner(System.in);
+public class BuscarReservesNom {
 
-    public void buscarReservesNom(Institut ins){
-        System.out.println("Introdueix el nom de la persona per buscar les seves reserves: ");
-        String nomPersona = scanner.next();
+    public List<Reserva> buscarReservesPerNom(Institut ins, String nomPersona) {
+        List<Reserva> reservesTrobades = new ArrayList<>();
 
-        boolean trobat = false;
         for (Reserva reserva : ins.getReserves()) {
             if (reserva.getPersona().getNom().equalsIgnoreCase(nomPersona)) {
-                System.out.println(reserva);
-                trobat = true;
+                reservesTrobades.add(reserva);
             }
         }
-
-        if (!trobat) {
-            System.out.println("No hi ha reserves amb aquest nom: " + nomPersona);
-        }
+        return reservesTrobades;
     }
 }

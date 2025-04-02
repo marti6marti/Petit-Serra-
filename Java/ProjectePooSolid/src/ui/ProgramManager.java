@@ -1,4 +1,4 @@
-package main;
+package ui;
 
 import model.booking.Reserva;
 import model.institute.Institut;
@@ -13,6 +13,10 @@ import service.serviceReserva.BorrarReserva;
 import service.serviceReserva.BuscarReservesNom;
 import service.serviceReserva.MostraReserves;
 import service.serviceReserva.NovaReserva;
+import ui.uiPersones.NovaPersonaUI;
+import ui.uiReserva.BorrarReservaUI;
+import ui.uiReserva.BuscarReservesNomUI;
+import ui.uiReserva.NovaReservaUI;
 
 import java.time.LocalDateTime;
 import java.util.Scanner;
@@ -25,11 +29,11 @@ public class ProgramManager {
         MostraReserves mostraReserves = new MostraReserves();
         MostraPersones mostraPersones = new MostraPersones();
 
-        BuscarReservesNom buscarReservesNom = new BuscarReservesNom();
+        BuscarReservesNomUI buscador = new BuscarReservesNomUI();
 
-        NovaPersona novaPersona = new NovaPersona();
-        NovaReserva novaReserva = new NovaReserva();
-        BorrarReserva borrarReserva = new BorrarReserva();
+        NovaPersonaUI novaPersonaUI = new NovaPersonaUI();
+        NovaReservaUI novaReservaUI = new NovaReservaUI();
+        BorrarReservaUI borrarReservaUI = new BorrarReservaUI();
 
         Institut ins1 = new Institut("Poblenou");
 
@@ -86,16 +90,16 @@ public class ProgramManager {
                     mostraReserves.mostrareservas(ins1);
                     break;
                 case 4:
-                    buscarReservesNom.buscarReservesNom(ins1);
+                    buscador.buscarReservesNom(ins1);
                     break;
                 case 5:
-                    novaPersona.novaPersona(ins1);
+                    novaPersonaUI.novaPersona(ins1);
                     break;
                 case 6:
-                    novaReserva.novaReserva(ins1);
+                    novaReservaUI.novaReserva(ins1);
                     break;
                 case 7:
-                    borrarReserva.borrarReserva(ins1);
+                    borrarReservaUI.borrarReserva(ins1);
                     break;
                 case 8:
                     continuar = false;

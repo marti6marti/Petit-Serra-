@@ -7,51 +7,35 @@ import model.person.Profesor;
 
 import java.util.Scanner;
 
-public class NovaPersona implements NewPersona{
-    Scanner scanner = new Scanner(System.in);
+public class NovaPersona {
 
-    public void novaPersona(Institut ins){
-        System.out.println("\nQue ets?");
-        System.out.println("1. Alumne");
-        System.out.println("2. Profesor");
-        System.out.println("3. Persona Externa");
-        System.out.println("Opció: ");
-        int opcio = scanner.nextInt();
-        switch (opcio) {
-            case 1:
-                System.out.println("nom: ");
-                String nom1 = scanner.next();
-                System.out.println("tel: ");
-                int tel1 = scanner.nextInt();
-                System.out.println("curs: ");
-                String curs1 = scanner.next();
-                Alumne alumne = new Alumne(nom1, tel1, curs1);
-                ins.addPersona(alumne);
-                break;
-            case 2:
+    public boolean crearAlumne(Institut ins, String nom, int telefon, String curs) {
+        try {
+            Alumne alumne = new Alumne(nom, telefon, curs);
+            ins.addPersona(alumne);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
 
-                ProfessorUI rp = new ProfessorUI();
+    public boolean crearProfessor(Institut ins, String nom, int telefon, String materia) {
+        try {
+            Profesor professor = new Profesor(nom, telefon, materia);
+            ins.addPersona(professor);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
 
-               /*
-                System.out.println("nom: ");
-                String nom2 = scanner.next();
-                System.out.println("tel: ");
-                int tel2 = scanner.nextInt();
-                System.out.println("materia: ");
-                String materia2 = scanner.next();
-                Profesor profesor = new Profesor(nom2, tel2, materia2);
-                */
-                Professor professor = rp.requestProfessor();
-                ins.addPersona(profesor);
-                break;
-            case 3:
-                System.out.println("nom: ");
-                String nom3 = scanner.next();
-                System.out.println("tel: ");
-                int tel3 = scanner.nextInt();
-                PersonaExterna personaExterna = new PersonaExterna(nom3, tel3);
-                ins.addPersona(personaExterna);
-                break;
+    public boolean crearPersonaExterna(Institut ins, String nom, int telefon) {
+        try {
+            PersonaExterna personaExterna = new PersonaExterna(nom, telefon);
+            ins.addPersona(personaExterna);
+            return true;
+        } catch (Exception e) {
+            return false;
         }
     }
 }
