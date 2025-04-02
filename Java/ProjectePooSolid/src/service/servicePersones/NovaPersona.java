@@ -7,7 +7,7 @@ import model.person.Profesor;
 
 import java.util.Scanner;
 
-public class NovaPersona {
+public class NovaPersona implements NewPersona{
     Scanner scanner = new Scanner(System.in);
 
     public void novaPersona(Institut ins){
@@ -29,6 +29,10 @@ public class NovaPersona {
                 ins.addPersona(alumne);
                 break;
             case 2:
+
+                ProfessorUI rp = new ProfessorUI();
+
+               /*
                 System.out.println("nom: ");
                 String nom2 = scanner.next();
                 System.out.println("tel: ");
@@ -36,6 +40,8 @@ public class NovaPersona {
                 System.out.println("materia: ");
                 String materia2 = scanner.next();
                 Profesor profesor = new Profesor(nom2, tel2, materia2);
+                */
+                Professor professor = rp.requestProfessor();
                 ins.addPersona(profesor);
                 break;
             case 3:

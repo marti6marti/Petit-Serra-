@@ -5,7 +5,7 @@ import model.institute.Institut;
 
 import java.util.Scanner;
 
-public class BuscarReservesNom {
+public class BuscarReservesNom implements SearchReservesNom {
     Scanner scanner = new Scanner(System.in);
 
     public void buscarReservesNom(Institut ins){

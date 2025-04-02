@@ -9,7 +9,7 @@ import service.serviceEspais.MostraEspais;
 import java.time.LocalDateTime;
 import java.util.Scanner;
 
-public class NovaReserva {
+public class NovaReserva implements NewReserva{
     Scanner scanner = new Scanner(System.in);
 
     public void novaReserva(Institut ins){

@@ -3,7 +3,7 @@ package service.servicePersones;
 import model.institute.Institut;
 import model.person.Persona;
 
-public class MostraPersones {
+public class MostraPersones implements ShowPersones{
 
 
     public void mostrapersones(Institut ins) {

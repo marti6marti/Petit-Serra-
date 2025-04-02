@@ -5,7 +5,7 @@ import model.institute.Institut;
 
 import java.util.Scanner;
 
-public class BorrarReserva {
+public class BorrarReserva implements DelReserva{
     Scanner scanner = new Scanner(System.in);
 
     public void borrarReserva(Institut ins) {
