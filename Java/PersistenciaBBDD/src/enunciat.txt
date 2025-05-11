@@ -1,0 +1,8 @@
+1. Tingues en compte ara què passa quan insertem o modifiquem un Album amb un artista que no existeix. Com modificaries el codi per vigilar-ho.
+1.2 Afegeix la classe Artista i fes que es carregui l'objecte Artista corresponent a un àlbum (com a atribut de Album) en recuperar/llegir un Album, i no només l'idArtista.
+
+
+2. Fes tot el sistema CRUD (igual com Album) però amb Track, cal que també creïs MediaType i Genre ja que estan relacionats.
+
+
+3. (OPCIONAL) Continua Ampliant el gestor de Base de Dades amb la resta de taules i les seves relacions.
