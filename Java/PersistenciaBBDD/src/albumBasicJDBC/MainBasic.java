@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 public class MainBasic {
     public void menu(){
+
+
         System.out.println("Diguis quina opció vols executar:\n"
                         + "1) Llista els albums\n"
                         + "2) Selecciona un sol album\n"
