@@ -8,16 +8,16 @@ public class Album {
 
     private int idAlbum;
     private String titol;
-    private int idArtista;
+    private Artista artista;
     private static Connection con = Connexio.getConnection();
 
     public Album(){
         super();
     }
-    public Album(int idAlbum, String titol, int idArtista) {
+    public Album(int idAlbum, String titol, Artista artista) {
         this.idAlbum = idAlbum;
         this.titol = titol;
-        this.idArtista = idArtista;
+        this.artista = artista;
     }
 
     public int getIdAlbum() {
@@ -36,48 +36,57 @@ public class Album {
         this.titol = titol;
     }
 
-    public int getIdArtista() {
-        return idArtista;
+    public Artista getArtista() {
+        return artista;
     }
 
-    public void setIdArtista(int idArtista) {
-        this.idArtista = idArtista;
+    public void setArtista(Artista artista) {
+        this.artista = artista;
     }
 
     @Override
     public String toString() {
-        return "\nAlbum: " +
-                "id=" + idAlbum +
-                ", nom='" + titol + '\'' +
-                ", artista id=" + idArtista;
+        return "Album{" +
+                "idAlbum=" + idAlbum +
+                ", titol='" + titol + '\'' +
+                ", artista=" + artista +
+                '}';
     }
 
     public int creaAlbum(String titol, int idArtista)
     {
-        Statement stmt = null;
-        int idAlbumNou = -1;
-        try {
-            //Creem la consulta de la PreparedStatement
-            String query = "INSERT INTO Album (Title,ArtistId) VALUES (?, ?)";
-            PreparedStatement ps = con.prepareStatement(query);
 
-            //Modifiquem i executem la PreparedStatement
-            ps.setString(1,titol);
-            ps.setInt(2,idArtista);
-            ps.executeUpdate();
 
-            // Obtenim claus autogenerades
-            ResultSet rs = ps.getGeneratedKeys();
-            rs.next(); // Sabem que només n'hi ha una
-            idAlbumNou = rs.getInt(1);
+        Artista artista = null;
+        if (artista.llegeixArtista(idArtista) != null) {
+            Statement stmt = null;
+            int idAlbumNou = -1;
 
-            ps.close();
-            System.out.println("Records created successfully");
+            try {
+                //Creem la consulta de la PreparedStatement
+                String query = "INSERT INTO Album (Title,ArtistId) VALUES (?, ?)";
+                PreparedStatement ps = con.prepareStatement(query);
+
+                //Modifiquem i executem la PreparedStatement
+                ps.setString(1, titol);
+                ps.setInt(2, idArtista);
+                ps.executeUpdate();
+
+                // Obtenim claus autogenerades
+                ResultSet rs = ps.getGeneratedKeys();
+                rs.next(); // Sabem que només n'hi ha una
+                idAlbumNou = rs.getInt(1);
+
+                ps.close();
+                System.out.println("Records created successfully");
+                return idAlbumNou;
+            } catch (Exception e) {
+                System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            }
+
             return idAlbumNou;
-        } catch ( Exception e ) {
-            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
         }
-        return idAlbumNou;
+        return -0;
     }
 
     public Album llegeixAlbum(int idAlbum)
@@ -94,7 +103,7 @@ public class Album {
                 int albumId = rs.getInt("AlbumId");
                 String  title = rs.getString("Title");
                 int  artistId = rs.getInt("ArtistId");
-                album = new Album(albumId, title, artistId);
+                album = new Album(albumId, title, artista.llegeixArtista(artistId));
             }
             rs.close();
             ps.close();
@@ -108,6 +117,10 @@ public class Album {
     public void modificaAlbum(int idAlbum, String nouTitol, int nouIdArtista)
     {
         Statement stmt = null;
+
+        if (artista.llegeixArtista(nouIdArtista) != null){
+
+
         try {
             con.setAutoCommit(false);
             String query = "UPDATE Album set Title = ?, ArtistId = ? WHERE AlbumId = ?";
@@ -123,6 +136,7 @@ public class Album {
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
         }
         System.out.println("Operation done successfully");
+        }
     }
 
     public void eliminaAlbum(int idAlbum)
@@ -155,7 +169,7 @@ public class Album {
                 int albumId = rs.getInt("AlbumId");
                 String  title = rs.getString("Title");
                 int  artistId = rs.getInt("ArtistId");
-                albums.add(new Album(albumId, title, artistId));
+                albums.add(new Album(albumId, title, artista.llegeixArtista(artistId)));
             }
             rs.close();
             stmt.close();
