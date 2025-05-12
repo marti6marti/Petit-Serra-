@@ -9,6 +9,9 @@ public class Artista {
     private String nom;
     private static Connection con = Connexio.getConnection();
 
+    public Artista(){
+    }
+
     public Artista(int idArtista, String nom) {
         this.idArtista = idArtista;
         this.nom = nom;
@@ -47,7 +50,7 @@ public class Artista {
         }catch ( Exception e ) {
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
         }
-        return true;
+        return new Artista(idArtista, nom);
     }
 
 

@@ -12,8 +12,10 @@ public class Album {
     private static Connection con = Connexio.getConnection();
 
     public Album(){
-        super();
+        this.artista = new Artista();
     }
+
+
     public Album(int idAlbum, String titol, Artista artista) {
         this.idAlbum = idAlbum;
         this.titol = titol;
@@ -53,10 +55,7 @@ public class Album {
                 '}';
     }
 
-    public int creaAlbum(String titol, int idArtista)
-    {
-
-
+    public int creaAlbum(String titol, int idArtista) {
         Artista artista = null;
         if (artista.llegeixArtista(idArtista) != null) {
             Statement stmt = null;
