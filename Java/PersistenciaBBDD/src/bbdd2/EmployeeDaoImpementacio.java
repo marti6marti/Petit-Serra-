@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -65,20 +66,21 @@ public class EmployeeDaoImpementacio implements EmployeeDAO{
         ps.executeUpdate();
     }
 
-//    @Override
-//    public List<Employee> getEmployee() throws SQLException {
-//        String query = "select * from Album";
-//        PreparedStatement ps = con.prepareStatement(query);
-//        ResultSet rs = ps.executeQuery();
-//        List<Album> ls = new ArrayList();
-//
-//        while (rs.next()) {
-//            Album album = new Album();
-//            album.setIdAlbum(rs.getInt("AlbumId"));
-//            album.setNom(rs.getString("Title"));
-//            album.setIdArtista(rs.getInt("ArtistId"));
-//            ls.add(album);
-//        }
-//        return ls;
-//    }
+    @Override
+    public List<Employee> getEmployee() throws SQLException {
+        String query = "select * from Employee";
+        PreparedStatement ps = con.prepareStatement(query);
+        ResultSet rs = ps.executeQuery();
+        List<Employee> ls = new ArrayList();
+
+        while (rs.next()) {
+            Employee employee = new Employee();
+            employee.setIdEmplyee(rs.getInt("EmployeeId"));
+            employee.setFirtsName(rs.getString("FirtsName"));
+            employee.setFirtsName(rs.getString("LastName"));
+            employee.setIdEmplyee(rs.getInt("PostalCode"));
+            ls.add(employee);
+        }
+        return ls;
+    }
 }
