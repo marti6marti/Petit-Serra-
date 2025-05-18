@@ -1,3 +1,5 @@
+package exercisisArxius;
+
 import java.io.*;
 
 // Classe per gestionar una base de dades binària d'alumnes
@@ -10,13 +12,13 @@ public class GestorRandomAccess {
             escriureAlumne(raf, 0, 1, "Joan", "Pérez", 20); // Escriu alumne a posició 0
             llegirAlumne(raf, 0); // Llegeix alumne a posició 0
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 
     // Escriu un alumne a una posició concreta
     static void escriureAlumne(RandomAccessFile raf, int pos, int id, String nom, String cognom, int edat) throws IOException {
-        raf.seek(pos * REGISTRE_SIZE);
+        raf.seek(pos*  REGISTRE_SIZE);
         raf.writeInt(id); // id alumne
         escriureStringFix(raf, nom); // nom amb llargada fixa
         escriureStringFix(raf, cognom); // cognom amb llargada fixa

@@ -1,3 +1,5 @@
+package exercisisArxius;
+
 import java.util.Scanner;
 
 // Classe principal amb menú per accedir a les diferents funcionalitats
@@ -13,6 +15,9 @@ public class Main {
             System.out.println("4. Base de dades amb RandomAccessFile");
             System.out.println("0. Sortir");
             op = sc.nextInt(); sc.nextLine();
+
+
+            //
 
             switch (op) {
                 case 1 -> GestorDirectoris.mostrarFitxers(); // Mostra fitxers d’un directori

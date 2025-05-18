@@ -1,3 +1,5 @@
+package exercisisArxius;
+
 import java.io.File;
 
 // Classe per gestionar directoris i fitxers utilitzant File

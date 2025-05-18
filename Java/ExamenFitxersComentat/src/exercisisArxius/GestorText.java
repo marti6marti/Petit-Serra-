@@ -1,3 +1,5 @@
+package exercisisArxius;
+
 import java.io.*;
 
 // Classe per llegir fitxers de text i mostrar el contingut en majúscules
@@ -9,8 +11,8 @@ public class GestorText {
                 // Mostra cada línia en majúscules
                 System.out.println(linia.toUpperCase());
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
     }
 }

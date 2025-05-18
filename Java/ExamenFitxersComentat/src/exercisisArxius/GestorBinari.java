@@ -1,3 +1,5 @@
+package exercisisArxius;
+
 import java.io.*;
 
 // Classe per copiar fitxers binaris (text, imatges, etc.)
