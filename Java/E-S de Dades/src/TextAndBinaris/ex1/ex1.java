@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 import java.util.List;
 
 public class ex1 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         String nombreArchivo = "src/TextAndBinaris/ex1/files/text.txt";
 

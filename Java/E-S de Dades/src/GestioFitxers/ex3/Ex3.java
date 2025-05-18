@@ -10,8 +10,8 @@ public class Ex3 {
     public static void main(String[] args) throws IOException {
         long max = Integer.MIN_VALUE;
         String name = null;
-        Path directori1 = Paths.get("/home/41652609t/Documents/Petit-Serra-/Java/E-S de Dades/src/GestioFitxers/ex3/fitxers");
-
+        String nombreArchivo = "src/GestioFitxers/ex3/fitxers";
+        Path directori1 = Paths.get(nombreArchivo);
 
         System.out.println("Directori " + Files.exists(directori1));
 
