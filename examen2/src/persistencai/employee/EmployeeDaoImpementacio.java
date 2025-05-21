@@ -1,4 +1,6 @@
-package bbdd2;
+package persistencai.employee;
+
+import persistencai.Connexio;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class EmployeeDaoImpementacio implements EmployeeDAO{
+public class EmployeeDaoImpementacio implements EmployeeDAO {
     private static Connection con = Connexio.getConnection();
 
     @Override

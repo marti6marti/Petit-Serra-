@@ -1,4 +1,6 @@
-package bbdd2;
+package persistencai.customer;
+
+import persistencai.Connexio;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

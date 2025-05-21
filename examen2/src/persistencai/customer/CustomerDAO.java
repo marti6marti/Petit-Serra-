@@ -1,4 +1,4 @@
-package bbdd2;
+package persistencai.customer;
 
 import java.sql.SQLException;
 import java.util.List;

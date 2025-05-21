@@ -1,4 +1,4 @@
-package bbdd2;
+package persistencai.customer;
 
 public class Customer {
     private int customerId;

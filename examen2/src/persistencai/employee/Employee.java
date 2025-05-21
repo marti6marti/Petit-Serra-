@@ -1,4 +1,4 @@
-package bbdd2;
+package persistencai.employee;
 
 public class Employee {
     public int idEmplyee;

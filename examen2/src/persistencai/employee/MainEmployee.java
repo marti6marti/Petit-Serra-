@@ -1,4 +1,4 @@
-package bbdd2;
+package persistencai.employee;
 
 import java.sql.SQLException;
 import java.util.List;

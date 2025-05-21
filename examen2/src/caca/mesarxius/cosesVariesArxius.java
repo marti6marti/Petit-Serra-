@@ -1,11 +1,11 @@
-package mesarxius;
+package caca.mesarxius;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
-public class Examen {
+public class cosesVariesArxius {
     public static void main(String[] args) throws IOException {
         String nombreArchivo = "src/Examen/arxius/paper1.txt";
         List<String> lineas = Files.readAllLines(Paths.get(nombreArchivo));

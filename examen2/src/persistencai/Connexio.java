@@ -1,4 +1,4 @@
-package bbdd2;
+package persistencai;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
