@@ -52,11 +52,16 @@ public class Main {
 
         try {
 
-            //borrar mestre  i fer un rename de fixerAux a mestre
+            File fitxerMestre = new File(mestre);
+            File fitxerAuxiliar = new File(fitxerAux);
+
+            if (fitxerMestre.exists()) {
+                fitxerMestre.delete();
+            }
+            fitxerAuxiliar.renameTo(fitxerMestre);
+
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
-
     }
 }
