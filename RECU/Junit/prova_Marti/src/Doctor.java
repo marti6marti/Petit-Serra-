@@ -6,7 +6,7 @@ public class Doctor {
     private String specialization;
     private List<Patient> patients;
 
-    public Doctor(String name, String specialization, List<Patient> patients) {
+    public Doctor(String name, String specialization) {
         this.name = name;
         this.specialization = specialization;
         patients = new ArrayList<>();
@@ -49,13 +49,19 @@ public class Doctor {
         return false;
     }
 
-    public void removePatient(String name){
-        for (Patient patient : patients) {
-            if (patient.getName().equalsIgnoreCase(name)) {
-                patients.remove(patient);
-            } else {
-                System.out.println("This patient not exist");
+    public void removePatient(String name) {
+        boolean removed = false;
+
+        for (int i = 0; i < patients.size(); i++) {
+            if (patients.get(i).getName().equalsIgnoreCase(name)) {
+                patients.remove(i);
+                removed = true;
+                break;
             }
+        }
+
+        if (!removed) {
+            System.out.println("This patient not exist");
         }
     }
 
