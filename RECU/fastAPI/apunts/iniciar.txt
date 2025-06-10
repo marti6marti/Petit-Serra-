@@ -1,0 +1,14 @@
+pip install "fastapi[standard]"
+
+from fastapi import FastAPI
+
+app = FastAPI()
+
+
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
+
+
+
+fastapi dev main.py 
